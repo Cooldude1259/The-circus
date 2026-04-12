@@ -1,10 +1,9 @@
 import aiohttp
-import os
 
 class SwearChecker:
     def __init__(self):
         # This pulls from your .env file
-        self.url = os.getenv("https://ai-throughput.vercel.app/api/check")
+        self.url = "https://ai-throughput.vercel.app/api/check"
 
     async def check_text(self, text):
         if not self.url:
