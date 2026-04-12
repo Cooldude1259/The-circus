@@ -8,13 +8,13 @@ load_dotenv()
 # Initialize the Discord client
 intents = discord.Intents.default()
 intents.messages = True
-bot = discord.Client(intents=intents)
+client = discord.Client(intents=intents)
 
-@bot.event
+@client.event
 async def on_ready():
-    print(f'Yipeee!! The circus is live! Logged in as {bot.user}')
+    print(f'Yipeee!! The circus is live! Logged in as {client.user}')
 
-@bot.event
+@client.event
 async def on_message(message):
     print("Message received: ", message.content)
     if message.content.startswith('!kaboom'):
@@ -23,4 +23,4 @@ async def on_message(message):
 # Run the Circus
 api_key = os.getenv("DISCORD_TOKEN")
 
-bot.run(api_key)
+client.run(api_key)
