@@ -29,7 +29,7 @@ async def on_message(message):
     content = message.content
     message_id = message.id
     roles = message.author.roles
-    if "Abstracted" in [role.name for role in roles]:
+    if "Abstracted" in [roles]:
         if chanel != "talk-to-the-abstracted":
             await discord.delete_message(message_id)
             print(f"Deleted message from {author} in {chanel} for being Abstracted")
