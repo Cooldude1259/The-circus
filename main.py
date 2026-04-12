@@ -22,6 +22,19 @@ checker = SwearChecker()
 async def on_message(message):
     if message.author == bot.user:
         return
+    
+    author_id = message.author.id
+    author = message.author.name
+    chanel = message.channel.name
+    content = message.content
+    message_id = message.id
+    roles = message.author.roles
+    if "Abstracted" in [role.name for role in roles]:
+        if chanel != "talk-to-the-abstracted":
+            await discord.delete_message(message_id)
+            print(f"Deleted message from {author} in {chanel} for being Abstracted")
+            return
+        
 
     # Call the helper function
     # result will be the text response from Vercel (e.g., "1" or "0")
