@@ -1,6 +1,10 @@
 import discord
 import os
+from dotenv import load_dotenv
 from api_helper import SwearChecker
+
+# Load environment variables
+load_dotenv()
 
 # Initialize the Discord client
 intents = discord.Intents.default()
