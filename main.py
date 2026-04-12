@@ -9,6 +9,7 @@ load_dotenv()
 # Initialize the Discord client
 intents = discord.Intents.default()
 intents.messages = True
+intents.message_content = True
 bot = discord.Client(intents=intents)
 
 @bot.event
