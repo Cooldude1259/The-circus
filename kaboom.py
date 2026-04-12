@@ -16,6 +16,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    print("Message received: ", message.content)
     if message.content.startswith('!kaboom'):
         await message.channel.send('!kaboom')
 
