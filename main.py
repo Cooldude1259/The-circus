@@ -30,6 +30,9 @@ async def on_message(message):
     if "1" in result:
         print(f"Swear detected in: {message.content}")
         # Insert your timeout/delete logic here
+    elif result == "2":
+        print("API returned an error status. Please check the API for issues.")
+        await message.channel.send("Sorry, I'm having trouble checking that message right now. Please contact <@794832846228684800> for support on this issue.")
 
 
 # Run the Circus

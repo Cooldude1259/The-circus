@@ -15,7 +15,7 @@ class SwearChecker:
                 async with session.post(self.url, json={"content": text}) as resp:
                     if resp.status == 200:
                         return await resp.text()
-                    return "0"
+                    return "2"
             except Exception as e:
                 print(f"Vercel API Error: {e}")
                 return "0"
