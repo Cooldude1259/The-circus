@@ -1,4 +1,15 @@
+import discord
+import os
 from api_helper import SwearChecker
+
+# Initialize the Discord client
+intents = discord.Intents.default()
+intents.messages = True
+bot = discord.Client(intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'Yipeee!! The circus is live! Logged in as {bot.user}')
 
 # Initialize the helper once
 checker = SwearChecker()
@@ -15,3 +26,9 @@ async def on_message(message):
     if "1" in result:
         print(f"Swear detected in: {message.content}")
         # Insert your timeout/delete logic here
+
+
+# Run the Circus
+api_key = os.getenv("DISCORD_TOKEN")
+
+bot.run(api_key)
